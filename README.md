@@ -1,5 +1,5 @@
 # URDFGen
-Matlab package to generate robot  URDF from DH table.
+Robot URDF generator for Matlab.
 
 ## Descrption
 URDFGen allows you to easily obtain a URDF file for your robot model, by simply using the difnied DH table and joint types.
