@@ -1,0 +1,1042 @@
+<?xml version="1.0"?>
+<robot name="TEST" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<link name="link_0">
+<inertial>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<mass value="1000000"/>
+<inertia
+ixx="1000000"
+ ixy="0"
+ ixz="0"
+ iyy="1000000"
+ iyz="0"
+ izz="1000000"/>
+</inertial>
+<visual>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<geometry>
+<box size="0.01        0.01        0.01"/>
+</geometry>
+<material name="">
+<color rgba="0.7         0.7         0.7           1"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<geometry>
+<box size="0.01        0.01        0.01"/>
+</geometry>
+</collision>
+</link>
+<joint name="joint_0" type="prismatic">
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<parent link="link_0"/>
+<child link="casing_0"/>
+<axis xyz="0  0  1"/>
+<limit lower="0"
+upper ="1000"
+effort ="1000000"
+velocity ="1000000"/>
+</joint>
+<link name="casing_0">
+<inertial>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<mass value="0"/>
+<inertia
+ixx="0"
+ ixy="0"
+ ixz="0"
+ iyy="0"
+ iyz="0"
+ izz="0"/>
+</inertial>
+<visual>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<geometry>
+<box size="0.05        0.05         0.1"/>
+</geometry>
+<material name="">
+<color rgba="1  0  0  1"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<geometry>
+<box size="0.05        0.05         0.1"/>
+</geometry>
+</collision>
+</link>
+<joint name="fixed_0" type="fixed">
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<parent link="casing_0"/>
+<child link="link_1"/>
+<axis xyz="0  0  1"/>
+<limit lower="0"
+upper ="0"
+effort ="1000000"
+velocity ="1000000"/>
+</joint>
+<link name="link_1">
+<inertial>
+<origin xyz="0.039745           0           0"
+ rpy="1.5708     -1.5708           0"/>
+<mass value="1"/>
+<inertia
+ixx="0.0011515"
+ ixy="0"
+ ixz="0"
+ iyy="0.0011515"
+ iyz="0"
+ izz="0.00125"/>
+</inertial>
+<visual>
+<origin xyz="0.039745           0           0"
+ rpy="1.5708     -1.5708           0"/>
+<geometry>
+<cylinder length="0.079489" radius="0.05"/>
+</geometry>
+<material name="">
+<color rgba="0.7         0.7         0.7           1"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.039745           0           0"
+ rpy="1.5708     -1.5708           0"/>
+<geometry>
+<cylinder length="0.079489" radius="0.05"/>
+</geometry>
+</collision>
+</link>
+<joint name="joint_1" type="revolute">
+<origin xyz="4.8673e-18    0.079489           0"
+ rpy="-1.5708           0      1.5708"/>
+<parent link="link_1"/>
+<child link="casing_1"/>
+<axis xyz="0  0  1"/>
+<limit lower="-3.1416"
+upper ="3.1416"
+effort ="1000000"
+velocity ="1000000"/>
+</joint>
+<link name="casing_1">
+<inertial>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<mass value="0"/>
+<inertia
+ixx="0"
+ ixy="0"
+ ixz="0"
+ iyy="0"
+ iyz="0"
+ izz="0"/>
+</inertial>
+<visual>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<geometry>
+<cylinder length="0.1" radius="0.05"/>
+</geometry>
+<material name="">
+<color rgba="1  0  0  1"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<geometry>
+<cylinder length="0.1" radius="0.05"/>
+</geometry>
+</collision>
+</link>
+<joint name="fixed_1" type="fixed">
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<parent link="casing_1"/>
+<child link="link_2"/>
+<axis xyz="0  0  1"/>
+<limit lower="0"
+upper ="0"
+effort ="1000000"
+velocity ="1000000"/>
+</joint>
+<link name="link_2">
+<inertial>
+<origin xyz="0.043831           0           0"
+ rpy="-1.5708     -1.5708           0"/>
+<mass value="1"/>
+<inertia
+ixx="0.0012654"
+ ixy="0"
+ ixz="0"
+ iyy="0.0012654"
+ iyz="0"
+ izz="0.00125"/>
+</inertial>
+<visual>
+<origin xyz="0.043831           0           0"
+ rpy="-1.5708     -1.5708           0"/>
+<geometry>
+<cylinder length="0.087663" radius="0.05"/>
+</geometry>
+<material name="">
+<color rgba="0.7         0.7         0.7           1"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.043831           0           0"
+ rpy="-1.5708     -1.5708           0"/>
+<geometry>
+<cylinder length="0.087663" radius="0.05"/>
+</geometry>
+</collision>
+</link>
+<joint name="joint_2" type="prismatic">
+<origin xyz="5.3678e-18   -0.087663           0"
+ rpy="1.5708           0     -1.5708"/>
+<parent link="link_2"/>
+<child link="casing_2"/>
+<axis xyz="0  0  1"/>
+<limit lower="0"
+upper ="1000"
+effort ="1000000"
+velocity ="1000000"/>
+</joint>
+<link name="casing_2">
+<inertial>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<mass value="0"/>
+<inertia
+ixx="0"
+ ixy="0"
+ ixz="0"
+ iyy="0"
+ iyz="0"
+ izz="0"/>
+</inertial>
+<visual>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<geometry>
+<box size="0.05        0.05         0.1"/>
+</geometry>
+<material name="">
+<color rgba="1  0  0  1"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<geometry>
+<box size="0.05        0.05         0.1"/>
+</geometry>
+</collision>
+</link>
+<joint name="fixed_2" type="fixed">
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<parent link="casing_2"/>
+<child link="link_3"/>
+<axis xyz="0  0  1"/>
+<limit lower="0"
+upper ="0"
+effort ="1000000"
+velocity ="1000000"/>
+</joint>
+<link name="link_3">
+<inertial>
+<origin xyz="0.071203           0           0"
+ rpy="-1.5708     -1.5708           0"/>
+<mass value="1"/>
+<inertia
+ixx="0.002315"
+ ixy="0"
+ ixz="0"
+ iyy="0.002315"
+ iyz="0"
+ izz="0.00125"/>
+</inertial>
+<visual>
+<origin xyz="0.071203           0           0"
+ rpy="-1.5708     -1.5708           0"/>
+<geometry>
+<cylinder length="0.14241" radius="0.05"/>
+</geometry>
+<material name="">
+<color rgba="0.7         0.7         0.7           1"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.071203           0           0"
+ rpy="-1.5708     -1.5708           0"/>
+<geometry>
+<cylinder length="0.14241" radius="0.05"/>
+</geometry>
+</collision>
+</link>
+<joint name="joint_3" type="revolute">
+<origin xyz="8.7199e-18    -0.14241           0"
+ rpy="1.5708           0     -1.5708"/>
+<parent link="link_3"/>
+<child link="casing_3"/>
+<axis xyz="0  0  1"/>
+<limit lower="-3.1416"
+upper ="3.1416"
+effort ="1000000"
+velocity ="1000000"/>
+</joint>
+<link name="casing_3">
+<inertial>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<mass value="0"/>
+<inertia
+ixx="0"
+ ixy="0"
+ ixz="0"
+ iyy="0"
+ iyz="0"
+ izz="0"/>
+</inertial>
+<visual>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<geometry>
+<cylinder length="0.1" radius="0.05"/>
+</geometry>
+<material name="">
+<color rgba="1  0  0  1"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<geometry>
+<cylinder length="0.1" radius="0.05"/>
+</geometry>
+</collision>
+</link>
+<joint name="fixed_3" type="fixed">
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<parent link="casing_3"/>
+<child link="link_4"/>
+<axis xyz="0  0  1"/>
+<limit lower="0"
+upper ="0"
+effort ="1000000"
+velocity ="1000000"/>
+</joint>
+<link name="link_4">
+<inertial>
+<origin xyz="0.060497           0           0"
+ rpy="1.5708     -1.5708           0"/>
+<mass value="1"/>
+<inertia
+ixx="0.0018449"
+ ixy="0"
+ ixz="0"
+ iyy="0.0018449"
+ iyz="0"
+ izz="0.00125"/>
+</inertial>
+<visual>
+<origin xyz="0.060497           0           0"
+ rpy="1.5708     -1.5708           0"/>
+<geometry>
+<cylinder length="0.12099" radius="0.05"/>
+</geometry>
+<material name="">
+<color rgba="0.7         0.7         0.7           1"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.060497           0           0"
+ rpy="1.5708     -1.5708           0"/>
+<geometry>
+<cylinder length="0.12099" radius="0.05"/>
+</geometry>
+</collision>
+</link>
+<joint name="joint_4" type="revolute">
+<origin xyz="7.4087e-18     0.12099           0"
+ rpy="1.5708           0      1.5708"/>
+<parent link="link_4"/>
+<child link="casing_4"/>
+<axis xyz="0  0  1"/>
+<limit lower="-3.1416"
+upper ="3.1416"
+effort ="1000000"
+velocity ="1000000"/>
+</joint>
+<link name="casing_4">
+<inertial>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<mass value="0"/>
+<inertia
+ixx="0"
+ ixy="0"
+ ixz="0"
+ iyy="0"
+ iyz="0"
+ izz="0"/>
+</inertial>
+<visual>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<geometry>
+<cylinder length="0.1" radius="0.05"/>
+</geometry>
+<material name="">
+<color rgba="1  0  0  1"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<geometry>
+<cylinder length="0.1" radius="0.05"/>
+</geometry>
+</collision>
+</link>
+<joint name="fixed_4" type="fixed">
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<parent link="casing_4"/>
+<child link="link_5"/>
+<axis xyz="0  0  1"/>
+<limit lower="0"
+upper ="0"
+effort ="1000000"
+velocity ="1000000"/>
+</joint>
+<link name="link_5">
+<inertial>
+<origin xyz="0.051374           0           0"
+ rpy="1.5708     -1.5708           0"/>
+<mass value="1"/>
+<inertia
+ixx="0.0015048"
+ ixy="0"
+ ixz="0"
+ iyy="0.0015048"
+ iyz="0"
+ izz="0.00125"/>
+</inertial>
+<visual>
+<origin xyz="0.051374           0           0"
+ rpy="1.5708     -1.5708           0"/>
+<geometry>
+<cylinder length="0.10275" radius="0.05"/>
+</geometry>
+<material name="">
+<color rgba="0.7         0.7         0.7           1"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.051374           0           0"
+ rpy="1.5708     -1.5708           0"/>
+<geometry>
+<cylinder length="0.10275" radius="0.05"/>
+</geometry>
+</collision>
+</link>
+<joint name="joint_5" type="prismatic">
+<origin xyz="6.2916e-18     0.10275           0"
+ rpy="1.5708           0      1.5708"/>
+<parent link="link_5"/>
+<child link="casing_5"/>
+<axis xyz="0  0  1"/>
+<limit lower="0"
+upper ="1000"
+effort ="1000000"
+velocity ="1000000"/>
+</joint>
+<link name="casing_5">
+<inertial>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<mass value="0"/>
+<inertia
+ixx="0"
+ ixy="0"
+ ixz="0"
+ iyy="0"
+ iyz="0"
+ izz="0"/>
+</inertial>
+<visual>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<geometry>
+<box size="0.05        0.05         0.1"/>
+</geometry>
+<material name="">
+<color rgba="1  0  0  1"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<geometry>
+<box size="0.05        0.05         0.1"/>
+</geometry>
+</collision>
+</link>
+<joint name="fixed_5" type="fixed">
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<parent link="casing_5"/>
+<child link="link_6"/>
+<axis xyz="0  0  1"/>
+<limit lower="0"
+upper ="0"
+effort ="1000000"
+velocity ="1000000"/>
+</joint>
+<link name="link_6">
+<inertial>
+<origin xyz="0.087312           0           0"
+ rpy="-1.5708     -1.5708           0"/>
+<mass value="1"/>
+<inertia
+ixx="0.0031661"
+ ixy="0"
+ ixz="0"
+ iyy="0.0031661"
+ iyz="0"
+ izz="0.00125"/>
+</inertial>
+<visual>
+<origin xyz="0.087312           0           0"
+ rpy="-1.5708     -1.5708           0"/>
+<geometry>
+<cylinder length="0.17462" radius="0.05"/>
+</geometry>
+<material name="">
+<color rgba="0.7         0.7         0.7           1"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.087312           0           0"
+ rpy="-1.5708     -1.5708           0"/>
+<geometry>
+<cylinder length="0.17462" radius="0.05"/>
+</geometry>
+</collision>
+</link>
+<joint name="joint_6" type="prismatic">
+<origin xyz="1.0693e-17    -0.17462           0"
+ rpy="-1.5708           0     -1.5708"/>
+<parent link="link_6"/>
+<child link="casing_6"/>
+<axis xyz="0  0  1"/>
+<limit lower="0"
+upper ="1000"
+effort ="1000000"
+velocity ="1000000"/>
+</joint>
+<link name="casing_6">
+<inertial>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<mass value="0"/>
+<inertia
+ixx="0"
+ ixy="0"
+ ixz="0"
+ iyy="0"
+ iyz="0"
+ izz="0"/>
+</inertial>
+<visual>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<geometry>
+<box size="0.05        0.05         0.1"/>
+</geometry>
+<material name="">
+<color rgba="1  0  0  1"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<geometry>
+<box size="0.05        0.05         0.1"/>
+</geometry>
+</collision>
+</link>
+<joint name="fixed_6" type="fixed">
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<parent link="casing_6"/>
+<child link="link_7"/>
+<axis xyz="0  0  1"/>
+<limit lower="0"
+upper ="0"
+effort ="1000000"
+velocity ="1000000"/>
+</joint>
+<link name="link_7">
+<inertial>
+<origin xyz="0.068895           0           0"
+ rpy="-1.5708     -1.5708           0"/>
+<mass value="1"/>
+<inertia
+ixx="0.0022072"
+ ixy="0"
+ ixz="0"
+ iyy="0.0022072"
+ iyz="0"
+ izz="0.00125"/>
+</inertial>
+<visual>
+<origin xyz="0.068895           0           0"
+ rpy="-1.5708     -1.5708           0"/>
+<geometry>
+<cylinder length="0.13779" radius="0.05"/>
+</geometry>
+<material name="">
+<color rgba="0.7         0.7         0.7           1"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.068895           0           0"
+ rpy="-1.5708     -1.5708           0"/>
+<geometry>
+<cylinder length="0.13779" radius="0.05"/>
+</geometry>
+</collision>
+</link>
+<joint name="joint_7" type="prismatic">
+<origin xyz="8.4372e-18    -0.13779           0"
+ rpy="1.5708           0     -1.5708"/>
+<parent link="link_7"/>
+<child link="casing_7"/>
+<axis xyz="0  0  1"/>
+<limit lower="0"
+upper ="1000"
+effort ="1000000"
+velocity ="1000000"/>
+</joint>
+<link name="casing_7">
+<inertial>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<mass value="0"/>
+<inertia
+ixx="0"
+ ixy="0"
+ ixz="0"
+ iyy="0"
+ iyz="0"
+ izz="0"/>
+</inertial>
+<visual>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<geometry>
+<box size="0.05        0.05         0.1"/>
+</geometry>
+<material name="">
+<color rgba="1  0  0  1"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<geometry>
+<box size="0.05        0.05         0.1"/>
+</geometry>
+</collision>
+</link>
+<joint name="fixed_7" type="fixed">
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<parent link="casing_7"/>
+<child link="link_8"/>
+<axis xyz="0  0  1"/>
+<limit lower="0"
+upper ="0"
+effort ="1000000"
+velocity ="1000000"/>
+</joint>
+<link name="link_8">
+<inertial>
+<origin xyz="0.066229           0           0"
+ rpy="1.5708     -1.5708           0"/>
+<mass value="1"/>
+<inertia
+ixx="0.0020871"
+ ixy="0"
+ ixz="0"
+ iyy="0.0020871"
+ iyz="0"
+ izz="0.00125"/>
+</inertial>
+<visual>
+<origin xyz="0.066229           0           0"
+ rpy="1.5708     -1.5708           0"/>
+<geometry>
+<cylinder length="0.13246" radius="0.05"/>
+</geometry>
+<material name="">
+<color rgba="0.7         0.7         0.7           1"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.066229           0           0"
+ rpy="1.5708     -1.5708           0"/>
+<geometry>
+<cylinder length="0.13246" radius="0.05"/>
+</geometry>
+</collision>
+</link>
+<joint name="joint_8" type="prismatic">
+<origin xyz="8.1107e-18     0.13246           0"
+ rpy="1.5708           0      1.5708"/>
+<parent link="link_8"/>
+<child link="casing_8"/>
+<axis xyz="0  0  1"/>
+<limit lower="0"
+upper ="1000"
+effort ="1000000"
+velocity ="1000000"/>
+</joint>
+<link name="casing_8">
+<inertial>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<mass value="0"/>
+<inertia
+ixx="0"
+ ixy="0"
+ ixz="0"
+ iyy="0"
+ iyz="0"
+ izz="0"/>
+</inertial>
+<visual>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<geometry>
+<box size="0.05        0.05         0.1"/>
+</geometry>
+<material name="">
+<color rgba="1  0  0  1"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<geometry>
+<box size="0.05        0.05         0.1"/>
+</geometry>
+</collision>
+</link>
+<joint name="fixed_8" type="fixed">
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<parent link="casing_8"/>
+<child link="link_9"/>
+<axis xyz="0  0  1"/>
+<limit lower="0"
+upper ="0"
+effort ="1000000"
+velocity ="1000000"/>
+</joint>
+<link name="link_9">
+<inertial>
+<origin xyz="0.09379           0           0"
+ rpy="1.5708     -1.5708           0"/>
+<mass value="1"/>
+<inertia
+ixx="0.0035572"
+ ixy="0"
+ ixz="0"
+ iyy="0.0035572"
+ iyz="0"
+ izz="0.00125"/>
+</inertial>
+<visual>
+<origin xyz="0.09379           0           0"
+ rpy="1.5708     -1.5708           0"/>
+<geometry>
+<cylinder length="0.18758" radius="0.05"/>
+</geometry>
+<material name="">
+<color rgba="0.7         0.7         0.7           1"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.09379           0           0"
+ rpy="1.5708     -1.5708           0"/>
+<geometry>
+<cylinder length="0.18758" radius="0.05"/>
+</geometry>
+</collision>
+</link>
+<joint name="joint_9" type="prismatic">
+<origin xyz="1.1486e-17     0.18758           0"
+ rpy="-1.5708           0      1.5708"/>
+<parent link="link_9"/>
+<child link="casing_9"/>
+<axis xyz="0  0  1"/>
+<limit lower="0"
+upper ="1000"
+effort ="1000000"
+velocity ="1000000"/>
+</joint>
+<link name="casing_9">
+<inertial>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<mass value="0"/>
+<inertia
+ixx="0"
+ ixy="0"
+ ixz="0"
+ iyy="0"
+ iyz="0"
+ izz="0"/>
+</inertial>
+<visual>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<geometry>
+<box size="0.05        0.05         0.1"/>
+</geometry>
+<material name="">
+<color rgba="1  0  0  1"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<geometry>
+<box size="0.05        0.05         0.1"/>
+</geometry>
+</collision>
+</link>
+<joint name="fixed_9" type="fixed">
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<parent link="casing_9"/>
+<child link="link_10"/>
+<axis xyz="0  0  1"/>
+<limit lower="0"
+upper ="0"
+effort ="1000000"
+velocity ="1000000"/>
+</joint>
+<link name="link_10">
+<inertial>
+<origin xyz="0.046438           0           0"
+ rpy="-1.5708     -1.5708           0"/>
+<mass value="1"/>
+<inertia
+ixx="0.0013438"
+ ixy="0"
+ ixz="0"
+ iyy="0.0013438"
+ iyz="0"
+ izz="0.00125"/>
+</inertial>
+<visual>
+<origin xyz="0.046438           0           0"
+ rpy="-1.5708     -1.5708           0"/>
+<geometry>
+<cylinder length="0.092876" radius="0.05"/>
+</geometry>
+<material name="">
+<color rgba="0.7         0.7         0.7           1"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.046438           0           0"
+ rpy="-1.5708     -1.5708           0"/>
+<geometry>
+<cylinder length="0.092876" radius="0.05"/>
+</geometry>
+</collision>
+</link>
+<joint name="joint_10" type="revolute">
+<origin xyz="5.687e-18   -0.092876           0"
+ rpy="1.5708           0     -1.5708"/>
+<parent link="link_10"/>
+<child link="casing_10"/>
+<axis xyz="0  0  1"/>
+<limit lower="-3.1416"
+upper ="3.1416"
+effort ="1000000"
+velocity ="1000000"/>
+</joint>
+<link name="casing_10">
+<inertial>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<mass value="0"/>
+<inertia
+ixx="0"
+ ixy="0"
+ ixz="0"
+ iyy="0"
+ iyz="0"
+ izz="0"/>
+</inertial>
+<visual>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<geometry>
+<cylinder length="0.1" radius="0.05"/>
+</geometry>
+<material name="">
+<color rgba="1  0  0  1"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<geometry>
+<cylinder length="0.1" radius="0.05"/>
+</geometry>
+</collision>
+</link>
+<joint name="fixed_10" type="fixed">
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<parent link="casing_10"/>
+<child link="link_11"/>
+<axis xyz="0  0  1"/>
+<limit lower="0"
+upper ="0"
+effort ="1000000"
+velocity ="1000000"/>
+</joint>
+<link name="link_11">
+<inertial>
+<origin xyz="0.08179           0           0"
+ rpy="1.5708     -1.5708           0"/>
+<mass value="1"/>
+<inertia
+ixx="0.0028549"
+ ixy="0"
+ ixz="0"
+ iyy="0.0028549"
+ iyz="0"
+ izz="0.00125"/>
+</inertial>
+<visual>
+<origin xyz="0.08179           0           0"
+ rpy="1.5708     -1.5708           0"/>
+<geometry>
+<cylinder length="0.16358" radius="0.05"/>
+</geometry>
+<material name="">
+<color rgba="0.7         0.7         0.7           1"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.08179           0           0"
+ rpy="1.5708     -1.5708           0"/>
+<geometry>
+<cylinder length="0.16358" radius="0.05"/>
+</geometry>
+</collision>
+</link>
+<joint name="joint_11" type="revolute">
+<origin xyz="1.0016e-17     0.16358           0"
+ rpy="1.5708           0      1.5708"/>
+<parent link="link_11"/>
+<child link="casing_11"/>
+<axis xyz="0  0  1"/>
+<limit lower="-3.1416"
+upper ="3.1416"
+effort ="1000000"
+velocity ="1000000"/>
+</joint>
+<link name="casing_11">
+<inertial>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<mass value="0"/>
+<inertia
+ixx="0"
+ ixy="0"
+ ixz="0"
+ iyy="0"
+ iyz="0"
+ izz="0"/>
+</inertial>
+<visual>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<geometry>
+<cylinder length="0.1" radius="0.05"/>
+</geometry>
+<material name="">
+<color rgba="1  0  0  1"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<geometry>
+<cylinder length="0.1" radius="0.05"/>
+</geometry>
+</collision>
+</link>
+<joint name="fixed_11" type="fixed">
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<parent link="casing_11"/>
+<child link="link_12"/>
+<axis xyz="0  0  1"/>
+<limit lower="0"
+upper ="0"
+effort ="1000000"
+velocity ="1000000"/>
+</joint>
+<link name="link_12">
+<inertial>
+<origin xyz="0.08153           0           0"
+ rpy="-1.5708     -1.5708           0"/>
+<mass value="1"/>
+<inertia
+ixx="0.0028407"
+ ixy="0"
+ ixz="0"
+ iyy="0.0028407"
+ iyz="0"
+ izz="0.00125"/>
+</inertial>
+<visual>
+<origin xyz="0.08153           0           0"
+ rpy="-1.5708     -1.5708           0"/>
+<geometry>
+<cylinder length="0.16306" radius="0.05"/>
+</geometry>
+<material name="">
+<color rgba="0.7         0.7         0.7           1"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.08153           0           0"
+ rpy="-1.5708     -1.5708           0"/>
+<geometry>
+<cylinder length="0.16306" radius="0.05"/>
+</geometry>
+</collision>
+</link>
+</robot>

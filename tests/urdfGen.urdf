@@ -171,7 +171,7 @@ velocity ="1000000"/>
 <link name="link_2">
 <inertial>
 <origin xyz="5e-07           0           0"
- rpy="1.5708     -1.5708           0"/>
+ rpy="-1.5708     -1.5708           0"/>
 <mass value="1"/>
 <inertia
 ixx="0.000625"
@@ -183,7 +183,7 @@ ixx="0.000625"
 </inertial>
 <visual>
 <origin xyz="5e-07           0           0"
- rpy="1.5708     -1.5708           0"/>
+ rpy="-1.5708     -1.5708           0"/>
 <geometry>
 <cylinder length="1e-06" radius="0.05"/>
 </geometry>
@@ -193,7 +193,7 @@ ixx="0.000625"
 </visual>
 <collision>
 <origin xyz="5e-07           0           0"
- rpy="1.5708     -1.5708           0"/>
+ rpy="-1.5708     -1.5708           0"/>
 <geometry>
 <cylinder length="1e-06" radius="0.05"/>
 </geometry>

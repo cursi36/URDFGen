@@ -86,8 +86,8 @@ classdef urdfCreator
                 
                 %link i
                 d = DH_tab(i,1); theta = DH_tab(i,2); a = DH_tab(i,3); alpha = DH_tab(i,4);
-                R_z = [cos(theta) sin(theta) 0;
-                    -sin(theta) cos(theta) 0;
+                R_z = [cos(theta) -sin(theta) 0;
+                    sin(theta) cos(theta) 0;
                     0 0 1];
                 
                 child = link_name+num2str(i);
@@ -104,7 +104,7 @@ classdef urdfCreator
                 if a > 0
                     
                     R = R_z*R_link;
-                    str_link = generate_link_a_xacro(child,link_radius,link_mass,[a;0;0],R,color);
+                    str_link = generate_link_a_xacro(child,link_radius,link_mass,R_z*[a;0;0],R,color);
                     
                 end
                     
