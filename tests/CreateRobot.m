@@ -10,7 +10,7 @@ URDFgen = urdfCreator("TEST",DH_tab,types,joint_limits);
 %Generate urdf and save it as "urdfGen_1.urdf".
 % the second value is the link radius (links are supposed to be
 % cylindrical).
-str = URDFgen.generateURDF("urdfGen_10.urdf",0.01);
+str = URDFgen.generateURDF("urdfGen_10.urdf",0.01,0.01,0);
 
 
 

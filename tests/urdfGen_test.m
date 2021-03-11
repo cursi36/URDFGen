@@ -21,7 +21,7 @@ URDFgen = urdfCreator("TEST",DH_tab,types,limits);
 %Generate urdf and save it as "urdfGen_1.urdf".
 % the second value is the link radius (links are supposed to be
 % cylindrical).
-str = URDFgen.generateURDF("urdfGen_1.urdf",0.05);
+str = URDFgen.generateURDF("urdfGen_1.urdf",0.05,0.05,90*pi/180);
 
 %%%%%%%%%%%%%%
 % Same as above but different robotic structure
@@ -42,4 +42,4 @@ limits = [0 0.3 1e06 1e06;
     
 URDFgen = urdfCreator("TEST",DH_tab,types,limits);
 
-str = URDFgen.generateURDF("urdfGen.urdf",0.05);
+str = URDFgen.generateURDF("urdfGen.urdf",0.05,[],[]);

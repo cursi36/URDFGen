@@ -31,14 +31,14 @@ ixx="1000000"
 </geometry>
 </collision>
 </link>
-<joint name="joint_0" type="prismatic">
+<joint name="fixed_0" type="fixed">
 <origin xyz="0  0  0"
  rpy="0  0  0"/>
 <parent link="link_0"/>
 <child link="casing_0"/>
 <axis xyz="0  0  1"/>
 <limit lower="0"
-upper ="10"
+upper ="0"
 effort ="1000000"
 velocity ="1000000"/>
 </joint>
@@ -73,14 +73,14 @@ ixx="0"
 </geometry>
 </collision>
 </link>
-<joint name="fixed_0" type="fixed">
+<joint name="joint_0" type="prismatic">
 <origin xyz="0  0  0"
  rpy="0  0  0"/>
 <parent link="casing_0"/>
 <child link="link_1"/>
 <axis xyz="0  0  1"/>
 <limit lower="0"
-upper ="0"
+upper ="10"
 effort ="1000000"
 velocity ="1000000"/>
 </joint>
@@ -115,14 +115,14 @@ ixx="0.0019"
 </geometry>
 </collision>
 </link>
-<joint name="joint_1" type="revolute">
+<joint name="fixed_1" type="fixed">
 <origin xyz="0           0        0.15"
  rpy="1.5708           0           0"/>
 <parent link="link_1"/>
 <child link="casing_1"/>
 <axis xyz="0  0  1"/>
-<limit lower="-3.1416"
-upper ="3.1416"
+<limit lower="0"
+upper ="0"
 effort ="1000000"
 velocity ="1000000"/>
 </joint>
@@ -157,14 +157,14 @@ ixx="0"
 </geometry>
 </collision>
 </link>
-<joint name="fixed_1" type="fixed">
+<joint name="joint_1" type="revolute">
 <origin xyz="0  0  0"
  rpy="0  0  0"/>
 <parent link="casing_1"/>
 <child link="link_2"/>
 <axis xyz="0  0  1"/>
-<limit lower="0"
-upper ="0"
+<limit lower="-3.1416"
+upper ="3.1416"
 effort ="1000000"
 velocity ="1000000"/>
 </joint>
@@ -199,14 +199,14 @@ ixx="0.00023333"
 </geometry>
 </collision>
 </link>
-<joint name="joint_2" type="revolute">
+<joint name="fixed_2" type="fixed">
 <origin xyz="3.0616e-18        0.05           0"
  rpy="1.5708           0      1.5708"/>
 <parent link="link_2"/>
 <child link="casing_2"/>
 <axis xyz="0  0  1"/>
-<limit lower="-3.1416"
-upper ="3.1416"
+<limit lower="0"
+upper ="0"
 effort ="1000000"
 velocity ="1000000"/>
 </joint>
@@ -241,14 +241,14 @@ ixx="0"
 </geometry>
 </collision>
 </link>
-<joint name="fixed_2" type="fixed">
+<joint name="joint_2" type="revolute">
 <origin xyz="0  0  0"
  rpy="0  0  0"/>
 <parent link="casing_2"/>
 <child link="link_3"/>
 <axis xyz="0  0  1"/>
-<limit lower="0"
-upper ="0"
+<limit lower="-3.1416"
+upper ="3.1416"
 effort ="1000000"
 velocity ="1000000"/>
 </joint>
@@ -283,14 +283,14 @@ ixx="0.00023333"
 </geometry>
 </collision>
 </link>
-<joint name="joint_3" type="revolute">
+<joint name="fixed_3" type="fixed">
 <origin xyz="0.05           0           0"
  rpy="-1.5708           0           0"/>
 <parent link="link_3"/>
 <child link="casing_3"/>
 <axis xyz="0  0  1"/>
-<limit lower="-3.1416"
-upper ="3.1416"
+<limit lower="0"
+upper ="0"
 effort ="1000000"
 velocity ="1000000"/>
 </joint>
@@ -325,14 +325,14 @@ ixx="0"
 </geometry>
 </collision>
 </link>
-<joint name="fixed_3" type="fixed">
+<joint name="joint_3" type="revolute">
 <origin xyz="0  0  0"
  rpy="0  0  0"/>
 <parent link="casing_3"/>
 <child link="link_4"/>
 <axis xyz="0  0  1"/>
-<limit lower="0"
-upper ="0"
+<limit lower="-3.1416"
+upper ="3.1416"
 effort ="1000000"
 velocity ="1000000"/>
 </joint>
@@ -367,14 +367,14 @@ ixx="0.00023333"
 </geometry>
 </collision>
 </link>
-<joint name="joint_4" type="revolute">
+<joint name="fixed_4" type="fixed">
 <origin xyz="0.05           0           0"
  rpy="1.5708           0           0"/>
 <parent link="link_4"/>
 <child link="casing_4"/>
 <axis xyz="0  0  1"/>
-<limit lower="-3.1416"
-upper ="3.1416"
+<limit lower="0"
+upper ="0"
 effort ="1000000"
 velocity ="1000000"/>
 </joint>
@@ -409,14 +409,14 @@ ixx="0"
 </geometry>
 </collision>
 </link>
-<joint name="fixed_4" type="fixed">
+<joint name="joint_4" type="revolute">
 <origin xyz="0  0  0"
  rpy="0  0  0"/>
 <parent link="casing_4"/>
 <child link="link_5"/>
 <axis xyz="0  0  1"/>
-<limit lower="0"
-upper ="0"
+<limit lower="-3.1416"
+upper ="3.1416"
 effort ="1000000"
 velocity ="1000000"/>
 </joint>
@@ -451,14 +451,14 @@ ixx="0.00023333"
 </geometry>
 </collision>
 </link>
-<joint name="joint_5" type="revolute">
+<joint name="fixed_5" type="fixed">
 <origin xyz="0.05           0           0"
  rpy="-1.5708           0           0"/>
 <parent link="link_5"/>
 <child link="casing_5"/>
 <axis xyz="0  0  1"/>
-<limit lower="-3.1416"
-upper ="3.1416"
+<limit lower="0"
+upper ="0"
 effort ="1000000"
 velocity ="1000000"/>
 </joint>
@@ -493,14 +493,14 @@ ixx="0"
 </geometry>
 </collision>
 </link>
-<joint name="fixed_5" type="fixed">
+<joint name="joint_5" type="revolute">
 <origin xyz="0  0  0"
  rpy="0  0  0"/>
 <parent link="casing_5"/>
 <child link="link_6"/>
 <axis xyz="0  0  1"/>
-<limit lower="0"
-upper ="0"
+<limit lower="-3.1416"
+upper ="3.1416"
 effort ="1000000"
 velocity ="1000000"/>
 </joint>
@@ -535,14 +535,14 @@ ixx="0.00023333"
 </geometry>
 </collision>
 </link>
-<joint name="joint_6" type="revolute">
+<joint name="fixed_6" type="fixed">
 <origin xyz="0.05           0           0"
  rpy="1.5708           0           0"/>
 <parent link="link_6"/>
 <child link="casing_6"/>
 <axis xyz="0  0  1"/>
-<limit lower="-3.1416"
-upper ="3.1416"
+<limit lower="0"
+upper ="0"
 effort ="1000000"
 velocity ="1000000"/>
 </joint>
@@ -577,14 +577,14 @@ ixx="0"
 </geometry>
 </collision>
 </link>
-<joint name="fixed_6" type="fixed">
+<joint name="joint_6" type="revolute">
 <origin xyz="0  0  0"
  rpy="0  0  0"/>
 <parent link="casing_6"/>
 <child link="link_7"/>
 <axis xyz="0  0  1"/>
-<limit lower="0"
-upper ="0"
+<limit lower="-3.1416"
+upper ="3.1416"
 effort ="1000000"
 velocity ="1000000"/>
 </joint>
@@ -619,14 +619,14 @@ ixx="0.00023333"
 </geometry>
 </collision>
 </link>
-<joint name="joint_7" type="revolute">
+<joint name="fixed_7" type="fixed">
 <origin xyz="0.05           0           0"
  rpy="-1.5708           0           0"/>
 <parent link="link_7"/>
 <child link="casing_7"/>
 <axis xyz="0  0  1"/>
-<limit lower="-3.1416"
-upper ="3.1416"
+<limit lower="0"
+upper ="0"
 effort ="1000000"
 velocity ="1000000"/>
 </joint>
@@ -661,14 +661,14 @@ ixx="0"
 </geometry>
 </collision>
 </link>
-<joint name="fixed_7" type="fixed">
+<joint name="joint_7" type="revolute">
 <origin xyz="0  0  0"
  rpy="0  0  0"/>
 <parent link="casing_7"/>
 <child link="link_8"/>
 <axis xyz="0  0  1"/>
-<limit lower="0"
-upper ="0"
+<limit lower="-3.1416"
+upper ="3.1416"
 effort ="1000000"
 velocity ="1000000"/>
 </joint>
@@ -703,14 +703,14 @@ ixx="0.00023333"
 </geometry>
 </collision>
 </link>
-<joint name="joint_8" type="revolute">
+<joint name="fixed_8" type="fixed">
 <origin xyz="0.05           0           0"
  rpy="1.5708           0           0"/>
 <parent link="link_8"/>
 <child link="casing_8"/>
 <axis xyz="0  0  1"/>
-<limit lower="-3.1416"
-upper ="3.1416"
+<limit lower="0"
+upper ="0"
 effort ="1000000"
 velocity ="1000000"/>
 </joint>
@@ -745,14 +745,14 @@ ixx="0"
 </geometry>
 </collision>
 </link>
-<joint name="fixed_8" type="fixed">
+<joint name="joint_8" type="revolute">
 <origin xyz="0  0  0"
  rpy="0  0  0"/>
 <parent link="casing_8"/>
 <child link="link_9"/>
 <axis xyz="0  0  1"/>
-<limit lower="0"
-upper ="0"
+<limit lower="-3.1416"
+upper ="3.1416"
 effort ="1000000"
 velocity ="1000000"/>
 </joint>
@@ -787,14 +787,14 @@ ixx="2.5e-05"
 </geometry>
 </collision>
 </link>
-<joint name="joint_9" type="revolute">
+<joint name="fixed_9" type="fixed">
 <origin xyz="0  0  0"
  rpy="1.5708           0      1.5708"/>
 <parent link="link_9"/>
 <child link="casing_9"/>
 <axis xyz="0  0  1"/>
-<limit lower="-3.1416"
-upper ="3.1416"
+<limit lower="0"
+upper ="0"
 effort ="1000000"
 velocity ="1000000"/>
 </joint>
@@ -829,14 +829,14 @@ ixx="0"
 </geometry>
 </collision>
 </link>
-<joint name="fixed_9" type="fixed">
+<joint name="joint_9" type="revolute">
 <origin xyz="0  0  0"
  rpy="0  0  0"/>
 <parent link="casing_9"/>
 <child link="link_10"/>
 <axis xyz="0  0  1"/>
-<limit lower="0"
-upper ="0"
+<limit lower="-3.1416"
+upper ="3.1416"
 effort ="1000000"
 velocity ="1000000"/>
 </joint>
@@ -868,6 +868,132 @@ ixx="0.00023333"
  rpy="0  0  0"/>
 <geometry>
 <cylinder length="0.05" radius="0.01"/>
+</geometry>
+</collision>
+</link>
+<joint name="gripper_fixed" type="fixed">
+<origin xyz="0           0        0.05"
+ rpy="-1.5708     -1.5708           0"/>
+<parent link="link_10"/>
+<child link="gripper_case"/>
+<axis xyz="0  0  1"/>
+<limit lower="0"
+upper ="0"
+effort ="1000000"
+velocity ="1000000"/>
+</joint>
+<link name="gripper_case">
+<inertial>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<mass value="0"/>
+<inertia
+ixx="0"
+ ixy="0"
+ ixz="0"
+ iyy="0"
+ iyz="0"
+ izz="0"/>
+</inertial>
+<visual>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<geometry>
+<box size="0.005       0.005        0.01"/>
+</geometry>
+<material name="">
+<color rgba="1  0  0  1"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<geometry>
+<box size="0.005       0.005        0.01"/>
+</geometry>
+</collision>
+</link>
+<joint name="gripper" type="prismatic">
+<origin xyz="0  0  0"
+ rpy="0  0  0"/>
+<parent link="gripper_case"/>
+<child link="jaw_1"/>
+<axis xyz="0  0  1"/>
+<limit lower="-0.02"
+upper ="0"
+effort ="1000000"
+velocity ="1000000"/>
+</joint>
+<link name="jaw_1">
+<inertial>
+<origin xyz="0.005           0        0.01"
+ rpy="-3.1416     -1.5708           0"/>
+<mass value="0.001"/>
+<inertia
+ixx="9.8958e-09"
+ ixy="0"
+ ixz="0"
+ iyy="9.8958e-09"
+ iyz="0"
+ izz="3.125e-09"/>
+</inertial>
+<visual>
+<origin xyz="0.005           0        0.01"
+ rpy="-3.1416     -1.5708           0"/>
+<geometry>
+<box size="0.0025      0.0025        0.01"/>
+</geometry>
+<material name="">
+<color rgba="0  0  0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.005           0        0.01"
+ rpy="-3.1416     -1.5708           0"/>
+<geometry>
+<box size="0.0025      0.0025        0.01"/>
+</geometry>
+</collision>
+</link>
+<joint name="fixed_ee_2" type="fixed">
+<origin xyz="0           0        0.05"
+ rpy="-1.5708     -1.5708           0"/>
+<parent link="link_10"/>
+<child link="jaw_2"/>
+<axis xyz="0  0  1"/>
+<limit lower="0"
+upper ="0"
+effort ="1000000"
+velocity ="1000000"/>
+</joint>
+<link name="jaw_2">
+<inertial>
+<origin xyz="0.005           0       -0.01"
+ rpy="-3.1416     -1.5708           0"/>
+<mass value="0.001"/>
+<inertia
+ixx="9.8958e-09"
+ ixy="0"
+ ixz="0"
+ iyy="9.8958e-09"
+ iyz="0"
+ izz="3.125e-09"/>
+</inertial>
+<visual>
+<origin xyz="0.005           0       -0.01"
+ rpy="-3.1416     -1.5708           0"/>
+<geometry>
+<box size="0.0025      0.0025        0.01"/>
+</geometry>
+<material name="">
+<color rgba="0  0  0"/>
+</material>
+</visual>
+<collision>
+<origin xyz="0.005           0       -0.01"
+ rpy="-3.1416     -1.5708           0"/>
+<geometry>
+<box size="0.0025      0.0025        0.01"/>
 </geometry>
 </collision>
 </link>

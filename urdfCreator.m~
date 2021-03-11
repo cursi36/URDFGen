@@ -22,7 +22,7 @@ classdef urdfCreator
             
         end
         
-        function str = generateURDF(obj,filename,link_radius,gripper_length,theta_grip)
+        function str = generateURDF(obj,filename,link_radius,gripper_length)
             fileID = fopen(filename,'w');
             
             fprintf(fileID, '<?xml version="1.0"?>\n');
@@ -99,8 +99,8 @@ classdef urdfCreator
                 
                 Pose_L_fixed = eye(4,4);
                 if d > 0
-                    R = eye(3,3);
-                    str_link = generate_link_d_xacro(child,link_radius,link_mass,[0;0;d],R,color);
+                    
+                    str_link = generate_link_d_xacro(child,link_radius,link_mass,[0;0;d],eye(3,3),color);
                 end
                     
                 if a > 0
@@ -112,7 +112,7 @@ classdef urdfCreator
                     
                 if d > 0 && a > 0
                     
-                    [Pose_L_fixed,str_link,child,R] = addL_link(child,i,d,a,R_z,R_link,link_radius,link_mass,color);
+                    [Pose_L_fixed,str_link,child] = addL_link(child,i,d,a,R_z,R_link,link_radius,link_mass,color);
                     
                 end
                 
@@ -136,8 +136,55 @@ classdef urdfCreator
             
             if ~isempty(gripper_length)
                 
-               str_grip = Gripper(parent,Pose,R,theta_grip,gripper_length,link_radius,1e-03);
-               str = str+str_grip;
+                ee_link = parent;
+                
+                j_type = "prismatic";
+                
+                j_name = "gripper";
+                %                 l_name = link_name+num2str(i-1);
+                c_name = "gripper_case";
+                f_name = "gripper_fixed";
+                
+                %                 parent = l_name;
+                child = c_name;
+                
+                R_gripper = [0 0 1;
+                    0 -1 0;
+                    1 0 0];
+                
+                str = str+generate_joint_xacro(f_name,"fixed",Pose(1:3,4),R_gripper,parent,child,[0 0 1],...
+                    [0 0 1e06 1e06]);
+                
+                str = str+generate_casing_xacro(c_name,case_rad,j_type);
+                
+                child = "jaw_1";
+                %%joint i-1
+                str = str+generate_joint_xacro(j_name,j_type,zeros(3,1),eye(3,3),ee_link,child,...
+                    [0 0 1],[-2*link_radius,0,1e06,1e06] );
+                
+                % %casing for joint_i-1
+%                 str = str+generate_casing_xacro(c_name,case_rad,j_type);
+                %%%gripper model%%%%%%
+                d = link_radius; theta = 0; a = gripper_length; alpha = 0;
+                R_z = [cos(theta) -sin(theta) 0;
+                    sin(theta) cos(theta) 0;
+                    0 0 1];
+
+%                 str = str+generate_joint_xacro(f_name,"fixed",zeros(3,1),eye(3),c_name,child,[0 0 1],...
+%                     [0 0 1e06 1e06]);
+                
+                R = R_z*R_link;
+                str_link = generate_link_a_xacro(child,gripper_length/4,link_mass,R_z*[a;0;d],R,[0 0 0]);
+                str = str+str_link;
+                
+                child = "jaw_2";
+                
+                f_name = "fixed_ee_2";
+                str = str+generate_joint_xacro(f_name,"fixed",Pose(1:3,4),R_gripper,ee_link,child,[0 0 1],...
+                    [0 0 1e06 1e06]);
+                
+                str_link = generate_link_a_xacro(child,gripper_length/4,link_mass,R_z*[a;0;-d],R,[0 0 0]);
+                str = str+str_link;
                 
             end
             
@@ -155,7 +202,7 @@ classdef urdfCreator
     
 end
 
-function [T_fixed,str,child,R] = addL_link(link_name,idx,d,a,R_z,R_link,link_radius,link_mass,color)
+function [T_fixed,str,child] = addL_link(link_name,idx,d,a,R_z,R_link,link_radius,link_mass,color)
 
 str = generate_link_d_xacro(link_name,link_radius,link_mass,[0;0;d],eye(3,3),color);
 
@@ -170,8 +217,6 @@ R = R_z*R_link;
 str = str+generate_link_a_xacro(link_name+"_L",link_radius,link_mass,[a;0;0],R,color);
 
 child = link_name+"_L";
-
-
 
 end
 

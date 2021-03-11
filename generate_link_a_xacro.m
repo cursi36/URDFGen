@@ -10,7 +10,7 @@ Ixx = 1/12*mass*link_length^2+1/4*mass*link_radius^2;    Ixy = 0;    Ixz = 0;
 Iyy = 1/12*mass*link_length^2+1/4*mass*link_radius^2;    Iyz = 0;    
 Izz = 1/2*mass*link_radius^2; 
 
-origin_xyz = [Pi_i_1(1:2)'/2 0];
+origin_xyz = [Pi_i_1(1:2)'/2 Pi_i_1(3)];
 origin_rpy = fliplr(rotm2eul(Ri_i_1));
 
 %name
