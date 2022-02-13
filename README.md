@@ -1,4 +1,4 @@
-# URDFGen
+# URDFGenerator
 Robot URDF generator for Matlab.
 
 ## Descrption
